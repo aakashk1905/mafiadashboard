@@ -1,0 +1,117 @@
+.nb-cont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.nb-name {
+  color: #fff;
+  font-family: Archivo;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.nb-right-cont {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nb-notif {
+  cursor: pointer;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  width: 64px;
+  height: 64px;
+  padding: 10px;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nb-join-cont {
+  cursor: pointer;
+  display: flex;
+  width: 252px;
+  padding: 20px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  /* border-radius: 12px;
+  background: rgba(26, 186, 91, 0.1); */
+  border-radius: 12px;
+  background: rgba(26, 186, 91, 0.8);
+  overflow: hidden;
+  position: relative;
+}
+
+.nb-join-cont::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 132, 63, 0.8);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.nb-join-cont:hover::before {
+  left: 0;
+}
+.nb-join-cont:hover::before {
+  left: 0;
+}
+
+.nb-join-cont span {
+  color: #1aba5b;
+  text-align: center;
+  font-family: Archivo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 123.488%; /* 19.758px */
+
+  color: #fff;
+  text-align: center;
+  font-family: Archivo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 123.488%; /* 19.758px */
+}
+
+.ham {
+  padding: 0 0 0 30px;
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .ham {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nb-join-cont {
+    display: none;
+  }
+  .ham {
+    padding: 0;
+  }
+}

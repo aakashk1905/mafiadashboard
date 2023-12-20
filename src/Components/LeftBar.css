@@ -1,0 +1,130 @@
+.lb-cont {
+  width: 240px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  box-sizing: border-box;
+}
+
+.lb-top {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.lb-back {
+  cursor: pointer;
+  align-self: flex-start;
+  display: none;
+}
+
+.lb-menu-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  flex-direction: column;
+}
+
+.lb-menu {
+  cursor: pointer;
+  display: flex;
+  width: 192px;
+  padding: 16px;
+  align-items: center;
+  gap: 8px;
+}
+
+.lb-menu span {
+  color: #4d4d4d;
+  font-family: Archivo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.lb-btm {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.lb-name {
+  cursor: pointer;
+  border-radius: 8px;
+  background: #131612;
+  display: flex;
+  width: 192px;
+  padding: 14px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+}
+.lb-name span {
+  color: #fff;
+  font-family: Archivo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.lb-logout {
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: rgba(255, 90, 90, 0.1);
+  display: flex;
+  width: 192px;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.lb-logout span {
+  color: #ff5a5a;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.lb-menu svg path {
+  color: #4d4d4d;
+  fill: #4d4d4d;
+}
+.lb-menu-active {
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+.lb-menu-active span {
+  color: rgba(255, 255, 255, 0.7);
+}
+.lb-menu-active svg path {
+  color: rgba(255, 255, 255, 0.7);
+  fill: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 1200px) {
+  .lb-back {
+    cursor: pointer;
+    align-self: flex-start;
+    display: flex;
+  }
+}

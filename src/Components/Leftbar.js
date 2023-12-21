@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./LeftBar.css";
 import back from "../Assests/back.svg";
 import logo from "../Assests/logo.svg";
 import lbavatar from "../Assests/lbavatar.png";
 import Cookies from "js-cookie";
-const Leftbar = ({ setIsOpen, name }) => {
-  const [active, setActive] = useState(1);
-
+const Leftbar = ({ setIsOpen, name, setActive, active }) => {
   return (
     <div className="lb-cont">
       <div className="lb-top">
@@ -49,7 +47,40 @@ const Leftbar = ({ setIsOpen, name }) => {
             <span>Dashboard</span>
           </div>
           <div
-            className={`lb-menu ${active === 2 ? "lb-menu-active" : ""}`}
+            className={`lb-menu lb-hack ${
+              active === 2 ? "lb-menu-active-hack" : ""
+            }`}
+            onClick={() => setActive(2)}
+          >
+            <div className="lb-hack-join-abs">join</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="21"
+              viewBox="0 0 20 21"
+              fill="none"
+            >
+              <g clipPath="url(#clip0_599_1792)">
+                <path
+                  d="M19.2283 3.86796C18.9999 3.77328 18.7485 3.74847 18.506 3.79668C18.2635 3.84489 18.0407 3.96395 17.8658 4.1388L14.7733 7.23213L10.8842 3.34296C10.7681 3.2268 10.6302 3.13466 10.4785 3.07179C10.3268 3.00892 10.1642 2.97656 10 2.97656C9.83578 2.97656 9.67317 3.00892 9.52146 3.07179C9.36975 3.13466 9.23192 3.2268 9.11583 3.34296L5.22667 7.23213L2.13417 4.1388C1.95935 3.96387 1.73657 3.84472 1.49402 3.79645C1.25147 3.74817 1.00005 3.77292 0.771569 3.86758C0.543092 3.96223 0.347827 4.12254 0.210483 4.3282C0.0731385 4.53387 -0.000111972 4.77565 1.28473e-07 5.02296V14.4163C0.00154368 15.6314 0.484925 16.7963 1.34413 17.6555C2.20334 18.5147 3.36823 18.9981 4.58333 18.9996H15.4167C16.6318 18.9981 17.7967 18.5147 18.6559 17.6555C19.5151 16.7963 19.9985 15.6314 20 14.4163V5.02296C20 4.77571 19.9267 4.534 19.7894 4.32841C19.652 4.12282 19.4568 3.96258 19.2283 3.86796V3.86796ZM17.5 14.4163C17.5 14.9688 17.2805 15.4987 16.8898 15.8894C16.4991 16.2801 15.9692 16.4996 15.4167 16.4996H4.58333C4.0308 16.4996 3.5009 16.2801 3.11019 15.8894C2.71949 15.4987 2.5 14.9688 2.5 14.4163V8.04046L4.34333 9.8838C4.57774 10.1181 4.89563 10.2498 5.22708 10.2498C5.55854 10.2498 5.87642 10.1181 6.11083 9.8838L10 5.99463L13.8892 9.8838C14.1236 10.1181 14.4415 10.2498 14.7729 10.2498C15.1044 10.2498 15.4223 10.1181 15.6567 9.8838L17.5 8.04046V14.4163Z"
+                  fill="#1ABA5B"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_599_1792">
+                  <rect
+                    width="20"
+                    height="20"
+                    fill="white"
+                    transform="translate(0 0.666504)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+            <span>Hackathon</span>
+          </div>
+          <div
+            className={`lb-menu ${active === 3 ? "lb-menu-active" : ""}`}
             onClick={() => alert("Coming Soon !!!")}
           >
             <svg
@@ -67,9 +98,8 @@ const Leftbar = ({ setIsOpen, name }) => {
             <span>internship</span>
           </div>
           <div
-            className={`lb-menu ${active === 3 ? "lb-menu-active" : ""}`}
-            onClick={() => alert("Coming Soon !!!") } 
-            
+            className={`lb-menu ${active === 4 ? "lb-menu-active" : ""}`}
+            onClick={() => alert("Coming Soon !!!")}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -98,9 +128,9 @@ const Leftbar = ({ setIsOpen, name }) => {
             <span>Tasks</span>
           </div>
           <div
-            className={`lb-menu ${active === 4 ? "lb-menu-active" : ""}`}
+            className={`lb-menu ${active === 5 ? "lb-menu-active" : ""}`}
             onClick={() => setActive(4)}
-            style={{visibility: "hidden"}}
+            style={{ visibility: "hidden" }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

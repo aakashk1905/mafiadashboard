@@ -1,7 +1,7 @@
 import React from "react";
 import bell from "../Assests/bell.svg";
 import "./Navbar.css";
-const Navbar = ({ setIsOpen, name }) => {
+const Navbar = ({ setIsOpen, name, active }) => {
   return (
     <div className="nb-cont">
       <div className="nb-name">{name ? name : "User"}</div>
@@ -10,7 +10,11 @@ const Navbar = ({ setIsOpen, name }) => {
           <img src={bell} alt="bell" />
         </div>
         <a
-          href={`https://upskillmafia.com/whatsapp`}
+          href={`${
+            active !== 2
+              ? "https://upskillmafia.com/whatsapp"
+              : "https://chat.whatsapp.com/BdXrIXUGrNm9DK8ZCQcKok"
+          }`}
           target="_blank"
           rel="noreferrer"
         >

@@ -4,10 +4,12 @@ import Leftbar from "./Leftbar";
 import Navbar from "./Navbar";
 import MainCont from "./MainCont";
 import Cookies from "js-cookie";
+import Dashhack from "./Dashhack";
 // import Setlang from "./User/Setlang";
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState("");
+  const [active, setActive] = useState(1);
   const email = Cookies.get("user_email");
 
   const fetchData = async () => {
@@ -38,19 +40,39 @@ const Main = () => {
     <div className="main-cont">
       {isOpen && (
         <div className="abs-menu">
-          <Leftbar setIsOpen={setIsOpen} name={user ? user.name : "User"} />
+          <Leftbar
+            setIsOpen={setIsOpen}
+            name={user ? user.name : "User"}
+            active={active}
+            setActive={setActive}
+          />
         </div>
       )}
       <div className="main-left">
-        <Leftbar name={user ? user.name : "User"} />
+        <Leftbar
+          name={user ? user.name : "User"}
+          active={active}
+          setActive={setActive}
+        />
       </div>
       <div className="main-right">
         <div className="main-nav-cont">
-          <Navbar setIsOpen={setIsOpen} name={user ? user.name : "User"} />
+          <Navbar
+            setIsOpen={setIsOpen}
+            name={user ? user.name : "User"}
+            active={active}
+          />
         </div>
-        <div className="main-data-cont">
-          <MainCont user={user} />
-        </div>
+        {active === 1 && (
+          <div className="main-data-cont">
+            <MainCont user={user} />
+          </div>
+        )}
+        {active === 2 && (
+          <div className="main-data-cont">
+            <Dashhack />
+          </div>
+        )}
       </div>
     </div>
   );

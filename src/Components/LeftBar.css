@@ -41,6 +41,7 @@
   padding: 16px;
   align-items: center;
   gap: 8px;
+  position: relative;
 }
 
 .lb-menu span {
@@ -108,6 +109,22 @@
   color: #4d4d4d;
   fill: #4d4d4d;
 }
+.lb-menu {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+.lb-menu-active-hack {
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+.lb-menu-active-hack span {
+  color: #1aba5b;
+}
+.lb-menu-active-hack svg path {
+  color: #1aba5b;
+  fill: #1aba5b;
+}
 .lb-menu-active {
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.1);
@@ -119,6 +136,29 @@
 .lb-menu-active svg path {
   color: rgba(255, 255, 255, 0.7);
   fill: rgba(255, 255, 255, 0.7);
+}
+
+.lb-hack-join-abs {
+  position: absolute;
+  right: -4.188px;
+  top: -5px;
+  display: flex;
+  transform: rotate(-2.62deg);
+  padding: 6px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  background: linear-gradient(105deg, #1aba5b 0.24%, #fed12e 100.24%);
+  box-shadow: 0px 4px 16px 0px rgba(215, 205, 53, 0.15);
+
+  color: #0d110c;
+  font-family: Archivo;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
 }
 
 @media screen and (max-width: 1200px) {

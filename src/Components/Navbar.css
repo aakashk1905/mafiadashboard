@@ -109,9 +109,19 @@
 
 @media screen and (max-width: 600px) {
   .nb-join-cont {
-    display: none;
+    width: 140px;
+    padding: 10px 5px;
+  }
+  .nb-join-cont span {
+    font-size: 10px;
   }
   .ham {
     padding: 0;
+  }
+  .nb-notif {
+    display: none;
+  }
+  .nb-name {
+    font-size: clamp(18px, 1vw, 20px);
   }
 }

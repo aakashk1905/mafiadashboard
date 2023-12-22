@@ -51,13 +51,14 @@ const MainCont = ({ user }) => {
           <div className="mc-vid">
             {/* <img src={vid} alt="video" /> */}
             <iframe
-              src="https://www.youtube.com/embed/s3jXMEDJcXs?si=LsLDE5jqo82Z0F5h"
+              src="https://www.youtube.com/embed/FEjMybA86jA?si=FhTnE-HNcRF1LEHc"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
           </div>
+
           <a
             href="https://upskillmafia.com/campus"
             target="_blank"

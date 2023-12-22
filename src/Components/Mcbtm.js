@@ -238,10 +238,10 @@ const Mcbtm = () => {
               alt="Watch-Timer"
             ></img>
             <div className="hack-reg-timer">
-              Registration ends in{" "}
-              <b style={{ color: "#fff", display: "inline-block" }}>
+              Registration ended
+              {/* <b style={{ color: "#fff", display: "inline-block" }}>
                 {`${countdown.days}d ${countdown.hours}h ${countdown.minutes}m ${countdown.seconds}s`}
-              </b>
+              </b> */}
             </div>
           </div>
           <div className="hack-reg-btm-cont">
@@ -284,7 +284,7 @@ const Mcbtm = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                  <span>Fri,23 Dec, 2023</span>
+                  <span>Fri,22 Dec, 2023</span>
                 </div>
                 <div className="ue-hack-card-date">
                   <svg
@@ -319,11 +319,11 @@ const Mcbtm = () => {
                 </div>
               </div>
             </div>
-            <a className="ue-hack-a" href="https://upskillmafia.com/hackathon">
-              <div className="hack-reg-ue-cta">
+            {/* <a className="ue-hack-a" href="https://upskillmafia.com/hackathon"> */}
+              <div className="hack-reg-ue-cta" onClick={()=>alert("Registration Ended")}>
                 Register Now For <b>Free</b>
               </div>
-            </a>
+            {/* </a> */}
           </div>
         </div>
       </div>

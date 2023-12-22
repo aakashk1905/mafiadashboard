@@ -73,6 +73,11 @@
   gap: 8px;
   box-sizing: border-box;
 }
+.lb-name img {
+  width: 30px;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
 .lb-name span {
   color: #fff;
   font-family: Archivo;

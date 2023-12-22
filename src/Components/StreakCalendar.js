@@ -4,7 +4,6 @@ const StreakCalendar = ({ streakDates }) => {
   const currentMonth = new Date();
   const streakData = streakDates;
 
-
   const getDaysInMonth = (date) => {
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
@@ -32,11 +31,13 @@ const StreakCalendar = ({ streakDates }) => {
     for (let day = 1; day <= daysInMonth; day++) {
       const dateToCheck = `${currentMonth.getFullYear()}-${
         currentMonth.getMonth() + 1
-      }-${day}`;
+      }-${day <= 9 ? "0" + day : day}`;
+
       const isStreakDay = streakData.some(
         (datee) => datee.split("T")[0] === dateToCheck
       );
 
+      console.log(dateToCheck);
       calendar.push(
         <div
           key={day}

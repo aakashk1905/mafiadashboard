@@ -53,9 +53,9 @@ const MainCont = ({ user }) => {
             <iframe
               src="https://www.youtube.com/embed/s3jXMEDJcXs?si=LsLDE5jqo82Z0F5h"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
           <a

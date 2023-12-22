@@ -37,7 +37,7 @@ const StreakCalendar = ({ streakDates }) => {
         (datee) => datee.split("T")[0] === dateToCheck
       );
 
-      console.log(dateToCheck);
+      // console.log(dateToCheck);
       calendar.push(
         <div
           key={day}

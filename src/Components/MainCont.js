@@ -48,6 +48,7 @@ const MainCont = ({ user }) => {
         </div>
 
         <div className="mc-top-card">
+          <div className="mc-ce-text">Campus Explanation Video</div>
           <div className="mc-vid">
             {/* <img src={vid} alt="video" /> */}
             <iframe

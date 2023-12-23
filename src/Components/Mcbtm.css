@@ -460,6 +460,7 @@
   position: relative;
   overflow: hidden;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 .hack-reg-ue-cta:hover {
   transform: scale(0.95);

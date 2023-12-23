@@ -123,11 +123,12 @@ const Dashhack = () => {
               </div>
               <div
                 className="dt-sd-cta"
-                onClick={() =>
-                  alert(
-                    "Subbmission Starts after Problem Statement is Released"
-                  )
-                }
+                onClick={() => {
+                  window.open(
+                    "https://docs.google.com/forms/d/e/1FAIpQLSelZEgK0A1cLamORtkgiuJ_gb0TH_kjiSaaH2BMrboTXe55iA/viewform",
+                    "_blank"
+                  );
+                }}
               >
                 <img src={submit} alt="submit" />
                 <span>Submit Task</span>

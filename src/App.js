@@ -112,19 +112,15 @@ function App() {
     return <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />;
 
   return (
-    <div>
-      <div>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/dashboard">
-              <Route path="" element={<Main />} />
-              <Route path="stage" element={<RedirectComponent2 />} />
-              {/* <Route path="*" element={<Navigate replace to="/" />} /> */}
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/dashboard">
+          <Route path="" element={<Main />} />
+          <Route path="stage" element={<RedirectComponent2 />} />
+          {/* <Route path="*" element={<Navigate replace to="/" />} /> */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

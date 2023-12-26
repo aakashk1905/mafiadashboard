@@ -83,9 +83,7 @@ function RedirectComponent2() {
   useEffect(() => {
     if (width >= 800) {
       const email = Cookies.get("user_email");
-      if (!email) {
-        window.location.href = "https://upskillmafia.com/dashboard/stage";
-      } else {
+      if (email) {
         const fetchData = async () => {
           try {
             const response = await fetch(

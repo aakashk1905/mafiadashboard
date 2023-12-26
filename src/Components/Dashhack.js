@@ -9,7 +9,9 @@ import wintr from "../Assests/wintr.png";
 const Dashhack = () => {
   const [tip, setTips] = useState(false);
   const [prevwinners, setPrevWinners] = useState([]);
+  const [currwinners, setCurrWinners] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loading1, setLoading1] = useState(true);
   const scrollableDivRef = useRef(null);
 
   let isDragging = false;
@@ -64,15 +66,33 @@ const Dashhack = () => {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        console.log(data.data);
+        // console.log(data.data);
         setPrevWinners(data.data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
+    const fetchData1 = async () => {
+      try {
+        const response = await fetch(
+          "https://script.google.com/macros/s/AKfycbzjEJNcUqsfOGLCs-1cU7OySKQcR9N5mvZGVQKXdpmg4i2Qzq-ibWRWArihY00h--ZVlQ/exec"
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        // console.log(data.data);
+        setCurrWinners(data.data);
+        setLoading1(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
     fetchData();
+    fetchData1();
   }, []);
 
   return (
@@ -184,13 +204,53 @@ const Dashhack = () => {
             </div>
             <span>Dec 2023</span>
           </div>
-          <div className="dh-rc-ranks">
+          <div className="dh-rc-ranks1">
             <img src={wintr} alt="winner" />
             <div className="dh-rc-ranks-text">
               Results will be Published on
               <br />
-              <b style={{ color: "#fff" }}>29th Dec, 2023</b>
+              <b style={{ color: "#fff" }}>28th Dec, 2023</b>
             </div>
+
+            {/* <div className="win-head">
+              <div className="num-cont">
+                <div className="rank-num win-sub-head">#</div>
+                <div className="win-team-name win-sub-head">Team Name</div>
+              </div>
+              <div className="win-links win-sub-head">Actions</div>
+            </div>
+            <div className="new-win-list">
+              {loading1 && <div className="dh-loading">Loading...</div>}
+              {currwinners.map((winner, i) => (
+                <div className="new-win-list-item" key={i}>
+                  <div className="li-name-cont">
+                    <div
+                      className={`li-num ${i === 0 && "li-yell"} ${
+                        i === 1 && "li-grey"
+                      } ${i === 2 && "li-orange"}`}
+                    >
+                      #{i + 1}
+                    </div>
+                    <div>
+                      <div
+                        className={`li-team-name ${i === 0 && "li-name-yell"} ${
+                          i === 1 && "li-name-grey"
+                        } ${i === 2 && "li-name-orange"}`}
+                      >
+                        {winner.teamName}
+                      </div>
+                      <div className="li-team-mem">{winner.members}</div>
+                    </div>
+                  </div>
+                  <div
+                    className="li-vt"
+                    onClick={() => window.open(winner.links, "_blank")}
+                  >
+                    View Task
+                  </div>
+                </div>
+              ))}
+            </div> */}
           </div>
         </div>
 

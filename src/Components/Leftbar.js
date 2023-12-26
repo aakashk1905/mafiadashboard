@@ -52,7 +52,7 @@ const Leftbar = ({ setIsOpen, name, setActive, active }) => {
             }`}
             onClick={() => setActive(2)}
           >
-            <div className="lb-hack-join-abs">join</div>
+            <div className="lb-hack-join-abs">New</div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"

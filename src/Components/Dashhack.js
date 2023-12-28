@@ -205,14 +205,14 @@ const Dashhack = () => {
             <span>Dec 2023</span>
           </div>
           <div className="dh-rc-ranks1">
-            <img src={wintr} alt="winner" />
+            {/* <img src={wintr} alt="winner" />
             <div className="dh-rc-ranks-text">
               Results will be Published on
               <br />
               <b style={{ color: "#fff" }}>28th Dec, 2023</b>
-            </div>
+            </div> */}
 
-            {/* <div className="win-head">
+            <div className="win-head">
               <div className="num-cont">
                 <div className="rank-num win-sub-head">#</div>
                 <div className="win-team-name win-sub-head">Team Name</div>
@@ -250,7 +250,7 @@ const Dashhack = () => {
                   </div>
                 </div>
               ))}
-            </div> */}
+            </div>
           </div>
         </div>
 

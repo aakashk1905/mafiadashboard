@@ -20,8 +20,24 @@
     left: 100%;
   }
 }
-
-a{
+.mobile-error-cont {
+  background-color: #282c34;
+  display: flex;
+  width: 95vw;
+  height: 90vh;
+  padding: 2vw;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  flex-direction: column;
+  gap: 10px;
+}
+.mobile-error {
+  color: #fff;
+  margin: 0;
+}
+a {
   text-decoration: none;
 }
 .App-header {

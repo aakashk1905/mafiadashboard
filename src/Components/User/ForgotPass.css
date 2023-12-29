@@ -1,0 +1,136 @@
+.login-inner-cont1 {
+  width: 98vw;
+  max-width: 376px;
+  height: auto;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+
+  backdrop-filter: blur(2px);
+
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #131612;
+
+  display: flex;
+
+  padding: 48px 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 36px;
+  box-sizing: border-box;
+}
+
+.fp-logo-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* position: relative; */
+}
+.fp-btm-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+}
+
+.fp-wn-head-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.fp-wn-head {
+  color: #fff;
+  font-family: Archivo;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 123.488%; /* 34.577px */
+}
+.fp-wn-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Archivo;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.fp-inp-cont,
+.fp-inps-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.fp-inps-cont {
+  gap: 15px;
+}
+.fp-inp-cont input {
+  display: flex;
+  padding: 15px 20px;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+
+  overflow: hidden;
+  color: white;
+  /* text-align: center; */
+  text-overflow: ellipsis;
+  font-family: Archivo;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.fp-send-cont {
+  cursor: pointer;
+  display: flex;
+  padding: 20px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 100px;
+  background: rgba(26, 186, 91, 0.8);
+}
+
+.disable-btn {
+  pointer-events: none;
+  background: rgb(2, 65, 27) !important;
+  transition: 0.5s ease;
+  transform: scale(0.9);
+}
+.fp-send-cont span {
+  color: #fff;
+  text-align: center;
+  font-family: Archivo;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.l-cross-contt {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}

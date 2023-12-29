@@ -4,7 +4,7 @@ import aim from "../Assests/aim.png";
 import submit from "../Assests/submit.svg";
 import tips from "../Assests/tips.png";
 import leaderboard from "../Assests/leaderboard.png";
-import wintr from "../Assests/wintr.png";
+// import wintr from "../Assests/wintr.png";
 
 const Dashhack = () => {
   const [tip, setTips] = useState(false);

@@ -62,7 +62,7 @@ function RedirectComponent2() {
 function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [showSign, setShowSign] = useState(false);
-  const [showForgot, setShowForgot] = useState(true);
+  const [showForgot, setShowForgot] = useState(false);
   const otpSent = Cookies.get("otp_sent") ? true : false;
   useEffect(() => {
     const email = Cookies.get("user_email");
@@ -108,6 +108,7 @@ function App() {
     }
   }, []);
 
+  // console.log(showForgot, otpSent);
   if (showForgot || otpSent)
     return (
       <ForgotPass

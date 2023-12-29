@@ -9,6 +9,7 @@ import Dashhack from "./Dashhack";
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState("");
+  const [tasks, setTasks] = useState([]);
   const [active, setActive] = useState(1);
   const email = Cookies.get("user_email");
 
@@ -27,14 +28,26 @@ const Main = () => {
       console.log("Error fetching data:", error.message);
     }
   };
+  const fetchData1 = async () => {
+    try {
+      const response = await fetch(
+        `https://api.upskillmafia.com/api/v1/user/gettaskbymail?email=${email}`
+      );
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const result = await response.json();
+      setTasks(result.tasks);
+    } catch (error) {
+      console.log("Error fetching data:", error.message);
+    }
+  };
 
   useEffect(() => {
     fetchData();
+    fetchData1();
   }, []);
-
-  // if (user !== "" && user && !user.language) {
-  //   return <Setlang setUser={setUser} />;
-  // }
 
   return (
     <div className="main-cont">
@@ -65,7 +78,7 @@ const Main = () => {
         </div>
         {active === 1 && (
           <div className="main-data-cont">
-            <MainCont user={user} />
+            <MainCont user={user} tasks={tasks} />
           </div>
         )}
         {active === 2 && (

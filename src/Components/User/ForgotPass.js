@@ -23,24 +23,30 @@ const ForgotPass = ({ setShowLogin, otpsent, setShowForgot }) => {
       setDisable(false);
       return;
     }
-    const response = await fetch(
-      `https://api.upskillmafia.com/api/v1/user/forgot?number=${number}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+    try {
+      const response = await fetch(
+        `https://api.upskillmafia.com/api/v1/user/forgot?number=${number}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const data = await response.json();
+      if (data.success) {
+        alert("Otp Sent To Whatsapp");
+        Cookies.set("otp_sent", true);
+        setDisable(false);
+        setEnterOtp(true);
       }
-    );
-    const data = await response.json();
-    if (data.success) {
-      alert("Otp Sent To Whatsapp");
-      Cookies.set("otp_sent", true);
-      setDisable(false);
-      setEnterOtp(true);
-    } else {
+    } catch (error) {
       alert("Something went wrong. Please try again later!!!");
     }
+  }
+
+  async function loginUser(event) {
+    if (event) event.preventDefault();
   }
 
   async function handleChangePassword() {
@@ -65,31 +71,45 @@ const ForgotPass = ({ setShowLogin, otpsent, setShowForgot }) => {
       return;
     }
 
-    const response = await fetch(`https://api.upskillmafia.com/api/v1/user/reset`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        otp,
-        password,
-      }),
-    });
-    const data = await response.json();
-    if (data.success) {
-      alert(data.message);
+    try {
+      const response = await fetch(
+        `https://api.upskillmafia.com/api/v1/user/reset`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            otp,
+            password,
+          }),
+        }
+      );
+      const data = await response.json();
+      if (data.success) {
+        alert(data.message);
+        Cookies.remove("otp_sent");
+        setDisable(false);
+        setEnterOtp(false);
+        setShowForgot(false);
+        setShowLogin(true);
+      } else {
+        alert(data.message);
+      }
+    } catch (e) {
       Cookies.remove("otp_sent");
-      setDisable(false);
       setEnterOtp(false);
-      setShowForgot(false);
-      setShowLogin(true);
-    } else {
-      alert(data.message);
+      alert("something went wrong!!!");
     }
   }
   return (
     <div className="login-cont">
-      <form className="login-inner-cont1">
+      <form
+        className="login-inner-cont1"
+        onSubmit={(e) => {
+          loginUser(e);
+        }}
+      >
         <div className="fp-logo-cont">
           <img src={logo} alt="logo" />
           <div className="l-cross-contt" onClick={() => setShowForgot(false)}>

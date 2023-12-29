@@ -24,7 +24,7 @@ const ForgotPass = ({ setShowLogin, otpsent, setShowForgot }) => {
       return;
     }
     const response = await fetch(
-      `http://localhost:4000/api/v1/user/forgot?number=${number}`,
+      `https://api.upskillmafia.com/api/v1/user/forgot?number=${number}`,
       {
         method: "POST",
         headers: {
@@ -65,7 +65,7 @@ const ForgotPass = ({ setShowLogin, otpsent, setShowForgot }) => {
       return;
     }
 
-    const response = await fetch(`http://localhost:4000/api/v1/user/reset`, {
+    const response = await fetch(`https://api.upskillmafia.com/api/v1/user/reset`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -34,11 +34,15 @@ const ForgotPass = ({ setShowLogin, otpsent, setShowForgot }) => {
         }
       );
       const data = await response.json();
+      //   console.log(data);
       if (data.success) {
         alert("Otp Sent To Whatsapp");
         Cookies.set("otp_sent", true);
         setDisable(false);
         setEnterOtp(true);
+      } else {
+        alert(data.message);
+        setDisable(false);
       }
     } catch (error) {
       alert("Something went wrong. Please try again later!!!");
@@ -95,6 +99,7 @@ const ForgotPass = ({ setShowLogin, otpsent, setShowForgot }) => {
         setShowLogin(true);
       } else {
         alert(data.message);
+        setDisable(false);
       }
     } catch (e) {
       Cookies.remove("otp_sent");
@@ -112,7 +117,13 @@ const ForgotPass = ({ setShowLogin, otpsent, setShowForgot }) => {
       >
         <div className="fp-logo-cont">
           <img src={logo} alt="logo" />
-          <div className="l-cross-contt" onClick={() => setShowForgot(false)}>
+          <div
+            className="l-cross-contt"
+            onClick={() => {
+              //   console.log("logo clicked");
+              setShowForgot(false);
+            }}
+          >
             <img src={cross} alt="cross" />
           </div>
         </div>
@@ -161,8 +172,15 @@ const ForgotPass = ({ setShowLogin, otpsent, setShowForgot }) => {
               <div className="fp-wn-text">
                 An OTP has been sent to the WhatsApp number
                 <b
-                  style={{ textDecoration: "underline", color: "blue" }}
-                  onClick={() => setEnterOtp(false)}
+                  style={{
+                    textDecoration: "underline",
+                    color: "blue",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    Cookies.remove("otp_sent");
+                    setEnterOtp(false);
+                  }}
                 >
                   Edit Number
                 </b>

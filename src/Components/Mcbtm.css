@@ -7,16 +7,38 @@
   align-items: flex-start;
   gap: 24px;
 }
-
+.mc-info-card {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-radius: 16px 16px 0px 0px;
+  background: rgba(26, 186, 91, 0.3);
+  box-sizing: border-box;
+}
 .mc-daily-outer-cont {
   width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 17px;
+  gap: 0;
 }
-
+.parti-mc {
+  color: #fff;
+  font-family: Archivo;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 123.488%;
+}
+.dtc-cta-cont {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
 .mc-daily-cont {
   background: #131612;
   width: 100%;
@@ -24,11 +46,16 @@
   justify-content: center;
   display: flex;
   /* align-items: center; */
-  border-radius: 16px;
+  /* border-radius: 16px; */
   border: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
 }
 
+.mc-info-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .mc-daily-ch-cont {
   width: 50%;
   box-sizing: border-box;
@@ -41,7 +68,8 @@
 .aim-cont {
   width: 100%;
   display: flex;
-  height: 57px;
+  min-height: 57px;
+  height: auto;
   padding: 16px;
   align-items: center;
   gap: 8px;
@@ -57,7 +85,7 @@
 .aim-cont span {
   color: #fff;
   font-family: Archivo;
-  font-size: 20px;
+  font-size: clamp(14px, 6vw, 20px);
   font-style: normal;
   font-weight: 600;
   line-height: 123.488%;
@@ -102,6 +130,7 @@
 }
 
 .dtc-cta {
+  text-align: center;
   cursor: pointer;
   overflow: hidden;
   color: #ffcf33;

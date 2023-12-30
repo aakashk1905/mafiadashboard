@@ -40,7 +40,7 @@ const CountdownTimer = () => {
   function getNextSaturday() {
     const now = new Date();
     const dayOfWeek = now.getDay();
-    const daysUntilSunday = 0 - dayOfWeek + (dayOfWeek >= 0 ? 7 : 0); // 0 corresponds to Sunday
+    const daysUntilSunday = 1 - dayOfWeek + (dayOfWeek >= 0 ? 7 : 0); // 0 corresponds to Sunday
 
     const nextSunday = new Date(now);
     nextSunday.setDate(now.getDate() + daysUntilSunday);

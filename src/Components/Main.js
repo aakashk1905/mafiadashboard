@@ -5,9 +5,11 @@ import Navbar from "./Navbar";
 import MainCont from "./MainCont";
 import Cookies from "js-cookie";
 import Dashhack from "./Dashhack";
+import WhatsappPopup from "./User/WhatsappPopup";
 // import Setlang from "./User/Setlang";
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [wpPop, setwpPop] = useState(false);
   const [user, setUser] = useState("");
   const [tasks, setTasks] = useState([]);
   const [active, setActive] = useState(1);
@@ -24,6 +26,14 @@ const Main = () => {
 
       const result = await response.json();
       setUser(result.userGot);
+      console.log(result.userGot);
+
+      if (
+        (result.userGot.joined === false || !result.userGot.joined) &&
+        (!result.userGot.closed || result.userGot.closed < 2)
+      ) {
+        setwpPop(true);
+      }
     } catch (error) {
       console.log("Error fetching data:", error.message);
     }
@@ -51,6 +61,11 @@ const Main = () => {
 
   return (
     <div className="main-cont">
+      {wpPop && (
+        <div className="wp-pop-outer">
+          <WhatsappPopup email={email} setwpPop={setwpPop} />
+        </div>
+      )}
       {isOpen && (
         <div className="abs-menu">
           <Leftbar

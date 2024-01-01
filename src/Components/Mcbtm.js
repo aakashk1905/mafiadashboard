@@ -102,20 +102,20 @@ const Mcbtm = () => {
                 <div className="dtc-head"> Challenge Info : </div>
                 <div className="dtc-text">
                   Challenge <b>Live</b> on : 1/Jan/2024 <br />
-                  Challenge <b>Deadline</b> : 7/Jan/24 @7:00 pm.
+                  Challenge <b>Deadline</b> : 7/Jan/24 @10:00 pm.
                 </div>
               </div>
               <div className="dtc-cta-cont">
                 <div
                   className="dtc-cta"
-                  onClick={() => alert("Will be live on 1st Jan")}
+                  onClick={() => window.open("https://upskillmafia.com/weekly-task","_blank")}
                 >
                   View Task Document
                 </div>
                 <div
                   className="dtc-cta"
                   onClick={() =>
-                    alert("Submissions Starts after the Task goes Live")
+                    window.open("https://forms.gle/xxcpkpHeyBjDjL8s9","_blank")
                   }
                 >
                   Submit Task

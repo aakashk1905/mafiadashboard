@@ -37,7 +37,7 @@ const MainCont = ({ user, tasks }) => {
           <div className="mc-streak-top">
             <img src={fire} alt="fire"></img>
             <div className="mc-streak-top-text">
-              You Have a Login Streak of &nbsp;
+              You Have a Learning Streak of &nbsp;
               <b className="st-col">{st} Days</b>!
             </div>
           </div>

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./MainCont.css";
 // import vid from "../Assests/vid.svg";
-import fire from "../Assests/fire.png";
+import fire from "../Assests/fire.gif";
 import file from "../Assests/file.png";
 import Mcbtm from "./Mcbtm";
 import StreakCalendar from "./StreakCalendar";
-const MainCont = ({ user, tasks }) => {
-  const key = tasks.length > 0 ? Object.keys(tasks[0])[0] : "task1";
+const MainCont = ({ user, tasks, setActive, tasksLoading }) => {
+  const length = Object.keys(tasks).length;
+  const key = length > 0 ? Object.keys(tasks)[length - 1] : "task1";
   const [st, setSt] = useState(user ? user.streakData.streak : 0);
   // console.log(user);
   useEffect(() => {
@@ -26,9 +27,19 @@ const MainCont = ({ user, tasks }) => {
         if (timeDifference < 300000) {
           setSt(user.streakData.streak - 1);
         }
-      }
+      }else if( new Date() - new Date(darr[darr.length - 1])>
+        48 * 60 * 60 * 1000){
+          setSt(0);
+        }
     }
   }, [user]);
+
+  function datestr(inputDateString) {
+    const inputDate = new Date(inputDateString);
+    const options = { day: "numeric", month: "short", year: "numeric" };
+    const formattedDate = inputDate.toLocaleDateString("en-GB", options);
+    return formattedDate;
+  }
 
   return (
     <div className="mc-cont">
@@ -51,7 +62,6 @@ const MainCont = ({ user, tasks }) => {
         <div className="mc-top-card">
           <div className="mc-ce-text">Campus Explanation Video</div>
           <div className="mc-vid">
-            {/* <img src={vid} alt="video" /> */}
             <iframe
               src="https://www.youtube.com/embed/FEjMybA86jA?si=FhTnE-HNcRF1LEHc"
               title="YouTube video player"
@@ -126,14 +136,11 @@ const MainCont = ({ user, tasks }) => {
             </div>
             <div className="mc-tc-cont">
               <span>Progress</span>
-              <span>
-                {`Tasks Completed: ${tasks.length}/14`}
-                
-              </span>
+              <span>{`Tasks Completed: ${length}/14`}</span>
               <div className="prog-bar">
                 <div
                   className="prog-bar-active"
-                  style={{ width: `${(tasks.length / 14) * 100}%` }}
+                  style={{ width: `${(length / 14) * 100}%` }}
                 ></div>
               </div>
             </div>
@@ -142,17 +149,12 @@ const MainCont = ({ user, tasks }) => {
             <div className="mc-ls-cont">
               <span>Last Submission</span>
               <div className="mc-ls">
-                {tasks.length > 0 && (
+                {!tasksLoading && length > 0 && (
                   <>
-                  
                     {" "}
                     <div className="mc-ls-sub">
-                      <div className="mc-ls-head">
-                        {Object.keys(tasks[0])[0]}
-                      </div>
-                      <div className="mc-ls-text">
-                        {tasks[0][key].name}
-                      </div>
+                      <div className="mc-ls-head">{key}</div>
+                      <div className="mc-ls-text">{tasks[key].name}</div>
                       <div className="mc-ls-text cal">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -178,17 +180,30 @@ const MainCont = ({ user, tasks }) => {
                             </clipPath>
                           </defs>
                         </svg>
-                        <p>23 Dec, 2023</p>
+                        <p>{datestr(tasks[key].dos)}</p>
                       </div>
                     </div>
-                    <a href={tasks[0][key].link ? tasks[0][key].link : tasks[0][key].file ? tasks[0][key].file: ""}> 
+                    <a
+                      href={
+                        tasks[key].link
+                          ? tasks[key].link
+                          : tasks[key].file
+                          ? tasks[key].file
+                          : ""
+                      }
+                    >
                       <span>View</span>
                     </a>
                   </>
                 )}
-                {tasks.length === 0 && (
+                {!tasksLoading && length === 0 && (
                   <div className="mc-ls-head" style={{ fontSize: "14px" }}>
-                    Your Last Submissions will be Shown here
+                    PLease Submit Your task to see Here
+                  </div>
+                )}
+                {tasksLoading && (
+                  <div className="mc-ls-head" style={{ fontSize: "14px" }}>
+                    Loading Tasks...
                   </div>
                 )}
               </div>
@@ -196,9 +211,7 @@ const MainCont = ({ user, tasks }) => {
             <div
               className="mc-tc-btm-head"
               onClick={() => {
-                alert(
-                  "No Submissions Available....Wait for new Tasks to Go Live"
-                );
+                setActive(3);
               }}
             >
               View All Submissions

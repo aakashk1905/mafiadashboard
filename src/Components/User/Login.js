@@ -61,7 +61,7 @@ const Login = ({ setShowLogin, setShowSign, setShowForgot }) => {
         <GoogleLogin
           className="googlesign"
           onSuccess={(credentialResponse) => {
-            console.log(credentialResponse);
+            // console.log(credentialResponse);
             loginUser(null, credentialResponse);
           }}
           onError={errorMessage}

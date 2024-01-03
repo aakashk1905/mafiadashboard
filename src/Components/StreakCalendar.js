@@ -1,7 +1,7 @@
 import React from "react";
 import "./Cal.css";
 const StreakCalendar = ({ streakDates }) => {
-  console.log(streakDates)
+  // console.log(streakDates)
   const currentMonth = new Date();
   const streakData = streakDates;
 
@@ -33,7 +33,7 @@ const StreakCalendar = ({ streakDates }) => {
       const dateToCheck = `${currentMonth.getFullYear()}-${
         currentMonth.getMonth() + 1 <=9 ? "" + currentMonth.getMonth() + 1 : currentMonth.getMonth() + 1
       }-${day <= 9 ? "0" + day : day}`;
-      console.log(dateToCheck)
+      // console.log(dateToCheck)
       const isStreakDay = streakData.some(
         (datee) => datee.split("T")[0] === dateToCheck
       );

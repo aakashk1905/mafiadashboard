@@ -4,7 +4,7 @@ import back from "../Assests/back.svg";
 import logo from "../Assests/logo.svg";
 import lbavatar from "../Assests/lbavatar.png";
 import Cookies from "js-cookie";
-const Leftbar = ({ setIsOpen, name, setActive, active }) => {
+const Leftbar = ({ setIsOpen, name, setActive, active, isMentor }) => {
   return (
     <div className="lb-cont">
       <div className="lb-top">
@@ -14,7 +14,7 @@ const Leftbar = ({ setIsOpen, name, setActive, active }) => {
         <div className="lb-logo-cont">
           <img src={logo} alt="logo" />
         </div>
-        <div className="lb-menu-cont">
+        <div className={`lb-menu-cont ${isMentor ? "hmenu" : ""}`}>
           <div
             className={`lb-menu ${active === 1 ? "lb-menu-active" : ""}`}
             onClick={() => setActive(1)}
@@ -127,7 +127,7 @@ const Leftbar = ({ setIsOpen, name, setActive, active }) => {
             </svg>
             <span>internship</span>
           </div>
-          
+
           <div
             className={`lb-menu ${active === 5 ? "lb-menu-active" : ""}`}
             onClick={() => setActive(4)}

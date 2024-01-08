@@ -7,6 +7,7 @@ import Register from "./Components/User/Register";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 import error from "./Assests/error.gif";
+import MentorReview from "./Pages/MentorReview";
 
 function RedirectComponent2() {
   const width = window.innerWidth;
@@ -135,6 +136,7 @@ function App() {
       <Routes>
         <Route path="/dashboard">
           <Route path="" element={<Main />} />
+          <Route path="mentor/review" element={<MentorReview />} />
           <Route path="stage" element={<RedirectComponent2 />} />
           {/* <Route path="*" element={<Navigate replace to="/" />} /> */}
         </Route>

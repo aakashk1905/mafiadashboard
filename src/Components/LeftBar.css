@@ -8,7 +8,9 @@
   padding: 30px 0;
   box-sizing: border-box;
 }
-
+.hmenu {
+  display: none !important;
+}
 .lb-top {
   width: 90%;
   height: auto;

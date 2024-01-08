@@ -68,7 +68,7 @@ const Tasks = ({ tasks, user, tasksLoading }) => {
                     Languages: <b className="mn-text">English,Hindi,Telugu</b>
                   </div>
                 </div>
-                <div className="mentor-cont-pop">
+                {/* <div className="mentor-cont-pop">
                   <div className="mn-head">
                     Mentor Name: <b className="mn-text">Mentor Aravind</b>
                   </div>
@@ -83,7 +83,7 @@ const Tasks = ({ tasks, user, tasksLoading }) => {
                   <div className="mn-head">
                     Languages: <b className="mn-text">English,Hindi</b>
                   </div>
-                </div>
+                </div> */}
               </div>
               <div
                 className="mc-join-cont"

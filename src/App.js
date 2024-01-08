@@ -136,6 +136,7 @@ function App() {
       <Routes>
         <Route path="/dashboard">
           <Route path="" element={<Main />} />
+          <Route path=":slug" element={<Main />} />
           <Route path="mentor/review" element={<MentorReview />} />
           <Route path="stage" element={<RedirectComponent2 />} />
           {/* <Route path="*" element={<Navigate replace to="/" />} /> */}

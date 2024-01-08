@@ -7,15 +7,18 @@ import Cookies from "js-cookie";
 import Dashhack from "./Dashhack";
 import WhatsappPopup from "./User/WhatsappPopup";
 import Tasks from "./Tasks";
+import { useParams } from "react-router-dom";
 // import Setlang from "./User/Setlang";
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [wpPop, setwpPop] = useState(false);
   const [user, setUser] = useState("");
   const [tasks, setTasks] = useState({});
+
   const [tasksLoading, setTasksLoading] = useState(true);
   const [active, setActive] = useState(1);
   const email = Cookies.get("user_email");
+  const { slug } = useParams();
 
   const fetchData = async () => {
     try {
@@ -62,8 +65,25 @@ const Main = () => {
   useEffect(() => {
     fetchData();
     fetchData1();
+    if (slug === "tasks") {
+      setActive(3);
+    } else if (slug === "hackathon") {
+      setActive(2);
+    }
   }, []);
 
+  // if (slug !== "tasks" || slug !== "hackathon") {
+  //   window.location.href = "https://upskillmafia.com/dashbaoard";
+  //   return <h1> Not a Valid URL !!!!</h1>;
+  // }
+  const tabs = ["tasks", "hackathon"];
+  if (slug) {
+    console.log(slug);
+    if (!tabs.includes(slug)) {
+      window.location.href = "https://upskillmafia.com/dashboard";
+      return <h1> Not a Valid URL !!!!</h1>;
+    }
+  }
   return (
     <div className="main-cont">
       {wpPop && (

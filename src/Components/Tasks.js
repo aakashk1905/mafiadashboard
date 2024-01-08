@@ -65,7 +65,7 @@ const Tasks = ({ tasks, user, tasksLoading }) => {
                     Mentor Name: <b className="mn-text">Mentor Uday</b>
                   </div>
                   <div className="mn-head">
-                    Languages: <b className="mn-text">English,Telugu</b>
+                    Languages: <b className="mn-text">English,Hindi,Telugu</b>
                   </div>
                 </div>
                 <div className="mentor-cont-pop">

@@ -17,7 +17,7 @@ const Register = ({ setShowSign, setShowLogin, setShowRedirect }) => {
   async function registerUser(event) {
     event.preventDefault();
 
-    const response = await fetch("http://localhost:4000/api/v1/user/register", {
+    const response = await fetch("https://api.upskillmafia.com/api/v1/user/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

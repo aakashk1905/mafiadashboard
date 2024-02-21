@@ -19,7 +19,7 @@ const Login = ({ setShowLogin, setShowSign, setShowForgot }) => {
     
 
     const response = await fetch(
-      "http://localhost:4000/api/v1/user/login",
+      "https://api.upskillmafia.com/api/v1/user/login",
       {
         method: "POST",
         headers: {

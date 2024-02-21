@@ -25,7 +25,7 @@ const FeedBack = () => {
     // console.log(status, sheetname, email1);
     try {
       const response = await fetch(
-        `http://localhost:4000/api/v1/user/updatetaskbymail?email=${email1}&sheetname=${sheetname}&status=${status}`,
+        `https://api.upskillmafia.com/api/v1/user/updatetaskbymail?email=${email1}&sheetname=${sheetname}&status=${status}`,
         {
           method: "POST",
           headers: {
@@ -49,7 +49,7 @@ const FeedBack = () => {
     setTasksLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:4000/api/v1/user/gettaskbymail?email=${search}`
+        `https://api.upskillmafia.com/api/v1/user/gettaskbymail?email=${search}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");

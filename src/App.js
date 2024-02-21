@@ -19,7 +19,7 @@ function RedirectComponent2() {
         const fetchData = async () => {
           try {
             const response = await fetch(
-              `http://localhost:4000/api/v1/user/update-streak?email=${email}`,
+              `https://api.upskillmafia.com/api/v1/user/update-streak?email=${email}`,
               {
                 method: "POST",
                 headers: {
@@ -75,7 +75,7 @@ function App() {
       try {
         if (!email && email1 && id) {
           const response = await fetch(
-            "http://localhost:4000/api/v1/user/login",
+            "https://api.upskillmafia.com/api/v1/user/login",
             {
               method: "POST",
               headers: {

@@ -23,7 +23,7 @@ const Main = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/v1/user/getuser?email=${email}`
+        `https://api.upskillmafia.com/api/v1/user/getuser?email=${email}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -46,8 +46,8 @@ const Main = () => {
   const fetchData1 = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/v1/user/gettaskbymail?email=${email}`
-        // `http://localhost:4000/api/v1/user/gettaskbymail?email=${email}`
+        `https://api.upskillmafia.com/api/v1/user/gettaskbymail?email=${email}`
+        // `https://api.upskillmafia.com/api/v1/user/gettaskbymail?email=${email}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");

@@ -8,12 +8,12 @@ import StreakCalendar from "./StreakCalendar";
 const MainCont = ({ user, tasks, setActive, tasksLoading }) => {
   const length = Object.keys(tasks).length;
   const key = length > 0 ? Object.keys(tasks)[length - 1] : "task1";
-  const [st, setSt] = useState(user ? user.streakData.streak : 0);
+  const [st, setSt] = useState(user ? user.userDetails.streakData.streak : 0);
   // console.log(user);
   useEffect(() => {
     if (user) {
-      setSt(user.streakData.streak);
-      const darr = user.streakData.streakDates;
+      setSt(user.userDetails.streakData.streak);
+      const darr = user.userDetails.streakData.streakDates;
       if (
         new Date().getDate() - new Date(darr[darr.length - 1]).getDate() >
         1
@@ -25,7 +25,7 @@ const MainCont = ({ user, tasks, setActive, tasksLoading }) => {
       ) {
         const timeDifference = new Date() - new Date(darr[darr.length - 1]);
         if (timeDifference < 300000) {
-          setSt(user.streakData.streak - 1);
+          setSt(user.userDetails.streakData.streak - 1);
         }
       }else if( new Date() - new Date(darr[darr.length - 1])>
         48 * 60 * 60 * 1000){
@@ -54,7 +54,7 @@ const MainCont = ({ user, tasks, setActive, tasksLoading }) => {
           </div>
           <div className="streak-cal">
             <StreakCalendar
-              streakDates={user ? user.streakData.streakDates : []}
+              streakDates={user ? user.userDetails.streakData.streakDates : []}
             />
           </div>
         </div>

@@ -33,7 +33,7 @@ const StreakCalendar = ({ streakDates }) => {
       const dateToCheck = `${currentMonth.getFullYear()}-${
         currentMonth.getMonth() + 1 <=9 ? "0" + (currentMonth.getMonth() + 1) : currentMonth.getMonth() + 1
       }-${day <= 9 ? "0" + day : day}`;
-      console.log(dateToCheck)
+      // console.log(dateToCheck)
       const isStreakDay = streakData.some(
         (datee) => datee.split("T")[0] === dateToCheck
       );

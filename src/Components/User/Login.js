@@ -16,9 +16,10 @@ const Login = ({ setShowLogin, setShowSign, setShowForgot }) => {
 
   async function loginUser(event, credential) {
     if (event) event.preventDefault();
+    
 
     const response = await fetch(
-      "https://api.upskillmafia.com/api/v1/user/login",
+      "http://localhost:4000/api/v1/user/login",
       {
         method: "POST",
         headers: {
@@ -31,7 +32,7 @@ const Login = ({ setShowLogin, setShowSign, setShowForgot }) => {
         }),
       }
     );
-
+    console.log("hiii")
     const data = await response.json();
 
     if (data.user) {
@@ -61,7 +62,6 @@ const Login = ({ setShowLogin, setShowSign, setShowForgot }) => {
         <GoogleLogin
           className="googlesign"
           onSuccess={(credentialResponse) => {
-            // console.log(credentialResponse);
             loginUser(null, credentialResponse);
           }}
           onError={errorMessage}

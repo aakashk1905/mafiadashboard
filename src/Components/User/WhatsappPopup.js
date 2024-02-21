@@ -8,7 +8,7 @@ const WhatsappPopup = ({ setwpPop, email }) => {
     setDisable(true);
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/user/closed?email=${email}`,
+        `http://localhost:4000/api/v1/user/closed?email=${email}`,
         {
           method: "POST",
           headers: {
@@ -28,7 +28,7 @@ const WhatsappPopup = ({ setwpPop, email }) => {
     setDisable(true);
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/user/joined?email=${email}`,
+        `http://localhost:4000/api/v1/user/joined?email=${email}`,
         {
           method: "POST",
           headers: {

@@ -9,13 +9,9 @@ const ForgotPass = ({ setShowLogin, otpsent, setShowForgot }) => {
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
   const [otp, setOtp] = useState("");
-  const [enterOtp, setEnterOtp] = useState(otpsent ? otpsent : false);
+  const [enterOtp, setEnterOtp] = useState(false);
   const [cnfPass, setCnfPass] = useState("");
   const [disable, setDisable] = useState(false);
-
-  //   const errorMessage = (error) => {
-  //     console.log(error);
-  //   };
 
   async function handleSend() {
     if (number.length < 10) {
@@ -25,7 +21,7 @@ const ForgotPass = ({ setShowLogin, otpsent, setShowForgot }) => {
     }
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/user/forgot?number=${number}`,
+        `http://localhost:4000/api/v1/user/forgot?number=${number}`,
         {
           method: "POST",
           headers: {
@@ -77,7 +73,7 @@ const ForgotPass = ({ setShowLogin, otpsent, setShowForgot }) => {
 
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/user/reset`,
+        `http://localhost:4000/api/v1/user/reset`,
         {
           method: "POST",
           headers: {

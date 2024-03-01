@@ -8,7 +8,6 @@ const ChallengeInfo = ({ setShowInfo }) => {
           <b className="weekly-ui-challenge-container">
             <span>WEEKLY UI Challenge</span>
             <span className="participation-criterion">
-              {" "}
               Participation criterion
             </span>
           </b>
@@ -33,24 +32,21 @@ const ChallengeInfo = ({ setShowInfo }) => {
         <div className="chal-text">
           <ul className="participate-in-a-group-of-mini">
             <li className="less-than-3-member-in-a-team-a">
-              <span>{`Participate in a group of minimum `}</span>
-              <b className="members">3 members</b>
+              <span>We will stop accepting submissions sharp at </span>
+              <b className="members">7:00 pm ( 2nd March)</b>
               <span className="members">.</span>
             </li>
             <li className="less-than-3-member-in-a-team-a">
-              <b className="members">Less Than 3 member</b>
-              <span className="members">
-                {" "}
-                in a team are not eligible for the Weekly Challenge.
-              </span>
+              <b className="members">
+                Kindly Submit your figma file in view format.
+              </b>
             </li>
             <li className="less-than-3-member-in-a-team-a">
-              <span className="members">
-                Every new Weekly Challenge will be
-              </span>
-              <b className="members">{` live on Monday. `}</b>
+              <span className="members">Don’t Try to</span>
+              <b className="members">{` copy paste `}</b>any other designers
+              work (Disqualified in that case)
             </li>
-            <li className="less-than-3-member-in-a-team-a">
+            {/* <li className="less-than-3-member-in-a-team-a">
               <span className="members">{`Last Weekly challenge `}</span>
               <b className="members">RESULTS</b>
               <span className="members">{` will be announced on Tuesday Evening. `}</span>
@@ -68,20 +64,24 @@ const ChallengeInfo = ({ setShowInfo }) => {
                 If any design is discovered to be copied and pasted in your
                 submissions, your team will be disqualified.
               </span>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="chal-cta-cont">
           <div
             className="chal-cta-view"
-            onClick={() => alert("Will be live on 1st Jan")}
+            onClick={() =>
+              window.open("https://upskillmafia.com/uiux/weekly-task", "_blank")
+            }
           >
             View Challenge
           </div>
 
           <div
             className="chal-cta-submit"
-            onClick={() => alert("Submissions Starts after the Task goes Live")}
+            onClick={() =>
+              window.open("https://forms.gle/xPUsxkXroBxwsBz17", "_blank")
+            }
           >
             Submit Task
           </div>

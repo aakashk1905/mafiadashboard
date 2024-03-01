@@ -78,8 +78,9 @@ const Mcbtm = () => {
           <div className="mc-info-inner">
             <img src={coin} alt="alt" />
             <div className="parti-mc">
-              Participate in a Team of Minimum 3 Members and get Reward of{" "}
-              <b style={{ color: "#FFCF33", fontSize: "20px", fontStyle:"normal"}}>&nbsp;Rs 1200/-</b>
+              Participate in 24 Hours Weekly UI/UX Design Challenge
+              {/* Participate in a Team of Minimum 3 Members and get Reward of{" "}
+              <b style={{ color: "#FFCF33", fontSize: "20px", fontStyle:"normal"}}>&nbsp;Rs 1200/-</b> */}
             </div>
           </div>
           <img
@@ -101,21 +102,26 @@ const Mcbtm = () => {
               <div className="dtc-head-cont">
                 <div className="dtc-head"> Challenge Info : </div>
                 <div className="dtc-text">
-                  Challenge <b>Live</b> on : 1/Jan/2024 <br />
-                  Challenge <b>Deadline</b> : 7/Jan/24 @10:00 pm.
+                  Challenge <b>Live</b> on : 01/March/2024 <br />
+                  Start <b>Time</b> : 7:00 PM.
                 </div>
               </div>
               <div className="dtc-cta-cont">
                 <div
                   className="dtc-cta"
-                  onClick={() => window.open("https://upskillmafia.com/weekly-task","_blank")}
+                  onClick={() =>
+                    window.open(
+                      "https://upskillmafia.com/uiux/weekly-task",
+                      "_blank"
+                    )
+                  }
                 >
                   View Task Document
                 </div>
                 <div
                   className="dtc-cta"
                   onClick={() =>
-                    window.open("https://forms.gle/xxcpkpHeyBjDjL8s9","_blank")
+                    window.open("https://forms.gle/xPUsxkXroBxwsBz17", "_blank")
                   }
                 >
                   Submit Task
@@ -184,10 +190,11 @@ const Mcbtm = () => {
                 </defs>
               </svg>
               <span>
-                Next Challenge in{" "}
-                <b style={{ color: "#fff" }}>
+                Next Challenge Starts Today 7 PM
+                {/* Next Challenge in{" "} */}
+                {/* <b style={{ color: "#fff" }}>
                   <CountdownTimer />
-                </b>
+                </b> */}
               </span>
             </div>
           </div>

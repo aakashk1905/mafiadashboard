@@ -111,7 +111,7 @@ const Dashhack = () => {
               forum and a social media platform for beg...
             </div>
             <a
-              href="https://upskillmafia.com/hackathon-task"
+              href="https://upskillmafia.com/uiux/hackathon-task"
               target="_blank"
               rel="noreferrer"
               style={{ width: "100%" }}
